@@ -1,0 +1,13 @@
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+.vscode
+ehthumbs.db
+Thumbs.db
+npm-debug.log
+*.sublime-project
+*.sublime-workspace
+node_modules
+.env
+config.yml
