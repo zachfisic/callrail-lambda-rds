@@ -81,3 +81,13 @@ Estimation of the posterior distribution is done with two number: the peak of po
 ## Intervals
 
 Percentile Intervals (PI) have equal amounts of probability in their 'tails'. Depending on the distribution, the most probable value may not be in the interval (i.e. if the posterior mode is skewed far to the right).
+
+High Posterior Density Intervals (HPDI) always contain the 'peak' in posterior distributions.
+
+## Point Estimates
+
+You don't usually want 'point' estimates because:
+
+* a) the entire posterior contains more information
+* b) the 'best' point depends on purpose
+* c) the mean is nearly always more sensible than the mode
