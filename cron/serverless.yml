@@ -42,8 +42,14 @@ provider:
 #            - "/*"
 
 # you can define service wide environment variables here
-#  environment:
-#    variable1: value1
+  environment:
+    CALLRAIL_ACCESS_TOKEN: ${file(config.yml):callrailToken}
+    CALLRAIL_ACCOUNT_ID_1: ${file(config.yml):callrailAccount1}
+    CALLRAIL_ACCOUNT_ID_2: ${file(config.yml):callrailAccount2}
+    RDS_HOST: ${file(config.yml):rdsHost}
+    RDS_USER: ${file(config.yml):rdsUser}
+    RDS_PASS: ${file(config.yml):rdsPass}
+    RDS_DB: ${file(config.yml):rdsDb}
 
 # you can add packaging information here
 #package:
@@ -55,6 +61,10 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
+  calls:
+    handler: callrail.calls
+  connect:
+    handler: rds.connect
   hello:
     handler: handler.hello
 
