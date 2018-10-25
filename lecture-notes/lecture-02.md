@@ -77,3 +77,7 @@ Estimation of the posterior distribution is done with two number: the peak of po
 * How much posterior probability is below/above/between specified parameter values?
 * Which parameter values contain 50%/80%/95% of posterior probability? (confidence intervals)
 * Which paramter value maximizes posterior probability? Which minimizes posterior loss? (point estimates)
+
+## Intervals
+
+Percentile Intervals (PI) have equal amounts of probability in their 'tails'. Depending on the distribution, the most probable value may not be in the interval (i.e. if the posterior mode is skewed far to the right).
