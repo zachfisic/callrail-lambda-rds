@@ -26,7 +26,11 @@ provider:
   region: ${file(config.yml):region}
 
 # you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - lambda:InvokeFunction
+      Resource: "*"
 #    - Effect: "Allow"
 #      Action:
 #        - "s3:ListBucket"
@@ -50,6 +54,7 @@ provider:
     RDS_USER: ${file(config.yml):rdsUser}
     RDS_PASS: ${file(config.yml):rdsPass}
     RDS_DB: ${file(config.yml):rdsDb}
+    REGION: ${file(config.yml):region}
 
 # you can add packaging information here
 #package:
@@ -61,6 +66,10 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
+  run:
+    handler: init.run
+    # events:
+    #   - schedule: rate(5 minutes)
   calls:
     handler: callrail.calls
   connect:
